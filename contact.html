@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Peter's Home</title>
+<meta name="description" content="Contactez Peter's Home : 078 895 14 18 ou info@petershome.ch. Adresse à Susten, Valais.">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="catalogue.css">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav__brand">
+    <img src="img/logo.png" alt="Peter's Home" class="nav__logo">
+    <div class="nav__brand-text">
+      <span class="nav__title">Peter's Home</span>
+      <span class="nav__subtitle">DiFaSe Tamburrino</span>
+    </div>
+  </a>
+  <ul class="nav__menu">
+    <li><a href="index.html" class="nav__link">Accueil</a></li>
+    <li><a href="catalogue.html" class="nav__link">Catalogue</a></li>
+    <li><a href="ou-nous-trouver.html" class="nav__link">Où nous trouver</a></li>
+    <li><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+    <li><a href="pro.html" class="nav__link nav__link--pro">Espace pro</a></li>
+  </ul>
+  <button class="nav__burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="page-header">
+  <div class="page-header__container">
+    <span class="hero__eyebrow">Nous joindre</span>
+    <h1 class="page-header__title">Une question ? <em>Écrivez-nous.</em></h1>
+    <p class="page-header__desc">
+      Particulier curieux, revendeur intéressé ou prospect pro — nous répondons à chaque message.
+    </p>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="contact__container">
+
+    <!-- Coordonnées -->
+    <div class="contact__info">
+      <h2 class="contact__title">Coordonnées</h2>
+
+      <div class="contact__item">
+        <div class="contact__icon">📍</div>
+        <div>
+          <div class="contact__label">Adresse</div>
+          <address class="contact__value">
+            Peter's Home<br>
+            DiFaSe Tamburrino<br>
+            Kantonnstrasse 148<br>
+            3952 Susten, Valais
+          </address>
+        </div>
+      </div>
+
+      <div class="contact__item">
+        <div class="contact__icon">📞</div>
+        <div>
+          <div class="contact__label">Téléphone</div>
+          <a href="tel:+41788951418" class="contact__value contact__value--link">078 895 14 18</a>
+        </div>
+      </div>
+
+      <div class="contact__item">
+        <div class="contact__icon">✉️</div>
+        <div>
+          <div class="contact__label">Email</div>
+          <a href="mailto:info@petershome.ch" class="contact__value contact__value--link">info@petershome.ch</a>
+        </div>
+      </div>
+
+      <div class="contact__item">
+        <div class="contact__icon">🌐</div>
+        <div>
+          <div class="contact__label">Site web</div>
+          <div class="contact__value">www.petershome.ch</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <form class="contact__form" onsubmit="return handleContact(event)">
+      <h2 class="contact__title">Envoyez-nous un message</h2>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Nom complet *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="company">Entreprise (si applicable)</label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div class="form-field">
+          <label for="phone">Téléphone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="subject">Sujet *</label>
+        <select id="subject" name="subject" required>
+          <option value="">Choisissez un sujet</option>
+          <option value="info">Demande d'information</option>
+          <option value="reseller">Je souhaite devenir revendeur</option>
+          <option value="quote">Demande de devis</option>
+          <option value="other">Autre</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--large">Envoyer le message</button>
+
+      <p class="form-note">
+        En envoyant ce formulaire, vos informations seront utilisées uniquement pour répondre
+        à votre demande. Aucun partage avec des tiers.
+      </p>
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__brand">
+      <img src="img/logo.png" alt="" class="footer__logo">
+      <div>
+        <div class="footer__brand-name">Peter's Home</div>
+        <div class="footer__brand-sub">DiFaSe Tamburrino</div>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Navigation</h4>
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="ou-nous-trouver.html">Où nous trouver</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Contact</h4>
+      <p>Kantonnstrasse 148<br>3952 Susten</p>
+      <p>078 895 14 18</p>
+      <a href="mailto:info@petershome.ch">info@petershome.ch</a>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Espace pro</h4>
+      <p>Réservé aux revendeurs et professionnels.</p>
+      <a href="pro.html" class="footer__pro-btn">Connexion / Inscription →</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>© 2026 Peter's Home — DiFaSe Tamburrino. Tous droits réservés.</p>
+    <p class="footer__tagline">« Le choix rusé pour un intérieur protégé »</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
