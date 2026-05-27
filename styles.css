@@ -772,16 +772,40 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .nav { padding: 12px 20px; }
   .nav__menu {
     position: fixed;
-    inset: 70px 0 0 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     background: var(--bleu-fonce);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     flex-direction: column;
-    padding: 32px;
-    gap: 4px;
+    justify-content: center;
+    align-items: stretch;
+    padding: 80px 28px 40px;
+    gap: 8px;
     transform: translateX(100%);
-    transition: transform 0.3s;
-    z-index: 200;
+    transition: transform 0.3s ease;
+    z-index: 300;
+    overflow-y: auto;
   }
   .nav__menu.is-open { transform: translateX(0); }
+  /* Le burger reste au-dessus du menu pour pouvoir le refermer */
+  .nav__burger {
+    position: relative;
+    z-index: 400;
+  }
+  /* Les barres se transforment en croix quand le menu est ouvert */
+  .nav__burger.is-active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+    background: var(--blanc);
+  }
+  .nav__burger.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav__burger.is-active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+    background: var(--blanc);
+  }
   .nav__link { display: block; padding: 14px; width: 100%; color: rgba(255, 255, 255, 0.9); }
   .nav__link:hover { background: rgba(255, 255, 255, 0.08); color: var(--or); }
   .nav__link--active { color: var(--or); font-weight: 600; }
@@ -801,6 +825,48 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     transition: all 0.2s;
   }
   .hero { padding: 60px 20px 80px; }
+
+  /* Hero visuel : on remplace les cartes superposées par une grille nette */
+  .hero__visual {
+    height: auto;
+    max-width: 360px;
+    margin: 40px auto 0;
+  }
+  .hero__fox {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 28px;
+    animation: none;
+  }
+  .hero__product {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none !important;
+    animation: none;
+    width: 100%;
+    height: 120px;
+  }
+  .hero__product--1,
+  .hero__product--2,
+  .hero__product--3 {
+    width: 100%;
+    height: 120px;
+  }
+  .hero__visual {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    align-items: center;
+  }
+  .hero__fox { grid-column: 1 / -1; }
+
   .trust__container { flex-wrap: wrap; gap: 32px; }
   .trust__divider { display: none; }
   .categories, .why { padding: 70px 20px; }

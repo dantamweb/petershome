@@ -12,12 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
   if (burger && menu) {
     burger.addEventListener('click', function () {
       menu.classList.toggle('is-open');
+      burger.classList.toggle('is-active');
     });
 
     // Ferme le menu quand on clique sur un lien
     menu.querySelectorAll('.nav__link').forEach(function (link) {
       link.addEventListener('click', function () {
         menu.classList.remove('is-open');
+        burger.classList.remove('is-active');
       });
     });
   }
